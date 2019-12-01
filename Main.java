@@ -7,30 +7,30 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		System.out.println("Seçenekler:");
-		System.out.println("1.Onluktan Roma Rakamýna(Lütfen Onluk sistemde bir sayý giriniz.)");
-		System.out.println("2.Roma Rakamýndan Onluða(Lütfen Roma rakamlarýyla bir sayý giriniz.)");
+		System.out.println("SeÃ§enekler:");
+		System.out.println("1.Onluktan Roma RakamÃ½na(LÃ¼tfen Onluk sistemde bir sayÃ½ giriniz.)");
+		System.out.println("2.Roma RakamÃ½ndan OnluÃ°a(LÃ¼tfen Roma rakamlarÃ½yla bir sayÃ½ giriniz.)");
 
 		Scanner in = new Scanner(System.in);
 		int choice = in.nextInt();
 
 		try {
 			if (choice == 1) { // Convert int to roman
-				System.out.print("Ondalýk sistemde bir sayý giriniz: ");
+				System.out.print("OndalÃ½k sistemde bir sayÃ½ giriniz: ");
 				int givenVal = in.nextInt();
 				if(givenVal > 3999 || givenVal < 1) {
-					System.out.println("Girdiðiniz sayý 1 ile 3999 arasýnda olmalýdýr.");
+					System.out.println("GirdiÃ°iniz sayÃ½ 1 ile 3999 arasÃ½nda olmalÃ½dÃ½r.");
 				}else {
 					convertIntToRoman(givenVal);
 				}
 			} else if (choice == 2) { // Convert roman to int
-				System.out.print("Roma rakamlarýyla bir sayý giriniz: ");
+				System.out.print("Roma rakamlarÃ½yla bir sayÃ½ giriniz: ");
 				String givenVal = in.next();
 				int finalResult = convertRomanToInt(givenVal);
 				if(finalResult == -1)
-					System.out.println("Girdiðiniz roma rakamý I ile MMMCMXCIX arasýnda olmalýdýr.");
+					System.out.println("GirdiÃ°iniz roma rakamÃ½ I ile MMMCMXCIX arasÃ½nda olmalÃ½dÃ½r.");
 				else{
-					System.out.println("Sonuç: " + finalResult);
+					System.out.println("SonuÃ§: " + finalResult);
 				}
 			} 
 		}catch(InputMismatchException e) {
@@ -42,10 +42,10 @@ public class Main {
 		System.exit(0);
 	}
 	public static void convertIntToRoman(int number) {
-		char c[] = new char[1000]; 
+		char c[] = new char[10001]; 
 		int i = 0;         
 		if (number <= 0) { 
-			System.out.printf("Lütfen 1 ile 3999 arasý bir sayý giriniz."); 
+			System.out.printf("LÃ¼tfen 1 ile 3999 arasÃ½ bir sayÃ½ giriniz."); 
 			return; 
 		}         
 		while (number != 0) {             
@@ -115,7 +115,7 @@ public class Main {
 			} 
 		}
 
-		System.out.printf("Roma rakamýnýz: "); 
+		System.out.printf("Roma rakamÃ½nÃ½z: "); 
 		for (int j = 0; j < i; j++) { 
 			System.out.printf("%c", c[j]); 
 		} 
