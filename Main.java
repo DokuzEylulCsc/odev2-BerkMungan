@@ -5,35 +5,35 @@ import java.util.Scanner;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { //referans https://www.geeksforgeeks.org/java-awt-choice-class/
 
 		System.out.println("Seçenekler:");
-		System.out.println("1.Onluktan Roma Rakamýna(Lütfen Onluk sistemde bir sayý giriniz.)");
-		System.out.println("2.Roma Rakamýndan Onluða(Lütfen Roma rakamlarýyla bir sayý giriniz.)");
+		System.out.println("1.Onluktan Roma Rakamina(Lütfen Onluk sistemde bir sayi giriniz.)");
+		System.out.println("2.Roma Rakamindan Onluga(Lütfen Roma rakamlariyla bir sayi giriniz.)");
 
 		Scanner in = new Scanner(System.in);
 		int choice = in.nextInt();
 
 		try {
 			if (choice == 1) { // Convert int to roman
-				System.out.print("Ondalýk sistemde bir sayý giriniz: ");
+				System.out.print("Ondalik sistemde bir sayi giriniz: ");
 				int givenVal = in.nextInt();
 				if(givenVal > 3999 || givenVal < 1) {
-					System.out.println("Girdiðiniz sayý 1 ile 3999 arasýnda olmalýdýr.");
+					System.out.println("Girdiginiz sayi 1 ile 3999 arasinda olmalidir.");
 				}else {
 					convertIntToRoman(givenVal);
 				}
 			} else if (choice == 2) { // Convert roman to int
-				System.out.print("Roma rakamlarýyla bir sayý giriniz: ");
+				System.out.print("Roma rakamlariyla bir sayi giriniz: ");
 				String givenVal = in.next();
 				int finalResult = convertRomanToInt(givenVal);
 				if(finalResult == -1)
-					System.out.println("Girdiðiniz roma rakamý I ile MMMCMXCIX arasýnda olmalýdýr.");
+					System.out.println("Girdiginiz roma rakami I ile MMMCMXCIX arasinda olmalidir.");
 				else{
 					System.out.println("Sonuç: " + finalResult);
 				}
 			} 
-		}catch(InputMismatchException e) {
+		}catch(InputMismatchException e) { //referans https://www.dummies.com/programming/java/how-to-catch-exceptions-in-java/
 			System.exit(0);
 		}
 
@@ -41,11 +41,11 @@ public class Main {
 		in.close();
 		System.exit(0);
 	}
-	public static void convertIntToRoman(int number) {
+	public static void convertIntToRoman(int number) { //referans https://www.geeksforgeeks.org/converting-decimal-number-lying-between-1-to-3999-to-roman-numerals/
 		char c[] = new char[10001]; 
 		int i = 0;         
 		if (number <= 0) { 
-			System.out.printf("Lütfen 1 ile 3999 arasý bir sayý giriniz."); 
+			System.out.printf("Lütfen 1 ile 3999 arasi bir sayi giriniz."); 
 			return; 
 		}         
 		while (number != 0) {             
@@ -115,7 +115,7 @@ public class Main {
 			} 
 		}
 
-		System.out.printf("Roma rakamýnýz: "); 
+		System.out.printf("Roma rakaminiz: "); 
 		for (int j = 0; j < i; j++) { 
 			System.out.printf("%c", c[j]); 
 		} 
